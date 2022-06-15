@@ -11,9 +11,9 @@
 
 .row{
   min-width: 100%;
-  background: no-repeat url(./images/joanna-kosinska-RE-8WswW95o-unsplash.jpg);
+  background: no-repeat url(./images/tod.jpg);
   background-size: 100%;
-  opacity: 0.58;
+  /* opacity: 0.58; */
 }
 
 div.layout{
