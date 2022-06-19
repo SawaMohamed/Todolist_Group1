@@ -4,54 +4,51 @@
   box-sizing: border-box;
 }
 
-.container {
-  min-width: 100%;
-  /*position: relative;*/
-  display: flex;
+div.container {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 div.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-width: 100%;
+  min-height: 100vh;
   background: no-repeat url(./images/joanna-kosinska-RE-8WswW95o-unsplash.jpg);
   background-size: 100%;
   opacity: 0.58;
-  height: 700px;
 }
 
 /* login menu */
 div.login-menu {
- /* position: absolute;*/
+  position: absolute;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   z-index: 100;
-  width: 100%;
-  /*top: 0;
-  right: 0;*/
-  height: 100%;
   background: no-repeat url(./images/leone-venter-VieM9BdZKFo-unsplash.jpg);
-  background-size: 100%;
+  background-size: cover;
   min-width: 100%;
+  min-height: 100%;
   font-family: Monaco, Monospace, Seif;
-  opacity:3;
-  /* display: ; */
+  opacity: 3;
+  display: none;
 }
 
-/*div.login-menu::after{
-content: '';
-position:relative;
-top:0;
-left:0;
-width: 100%;
-height: 100%;
-translate: transform(100%);
-background-color: #f60f0f3e;
-z-index: -1;
-}*/
+div.login-menu::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(36, 34, 34, 0.767)
+  );
+  z-index: -1;
+}
 
 /* Login menu */
 
@@ -69,21 +66,12 @@ button#login {
 
 /* Button idea */
 
-.wrapper{
-  position: relative;
+.wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
-.btn-interactive{
+button.btn-interactive {
   font-family: 'Ubuntu', sans-serif;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 170px;
   height: 40px;
   line-height: 1;
@@ -96,21 +84,21 @@ button#login {
   border-radius: 40px;
   cursor: pointer;
   overflow: hidden;
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
-.btn-interactive:hover{
+.btn-interactive:hover {
   background: #f90707;
   color: #fff;
 }
 
-.btn-interactive span{
+.btn-interactive span {
   opacity: 1;
   visibility: visible;
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
-button .success{
+button div.success {
   position: absolute;
   top: 0;
   left: 0;
@@ -121,81 +109,136 @@ button .success{
   z-index: 1;
   opacity: 0;
   visibility: hidden;
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
-button .success svg{
+button .success svg {
   width: 20px;
   height: 20px;
   fill: yellowgreen;
   transform-origin: 50% 50%;
   transform: translateY(-50%) rotate(0deg) scale(0);
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
-button.is_active{
+button.is_active {
   width: 40px;
   height: 40px;
 }
 
-button.is_active .success{
+button.is_active .success {
   opacity: 1;
   visibility: visible;
 }
 
-button.is_active .success svg{
+button.is_active .success svg {
   margin-top: 50%;
   transform: translateY(-50%) rotate(720deg) scale(1);
 }
 
-button.is_active span{
+button.is_active span {
   opacity: 0;
   visibility: hidden;
 }
-/* Phone element*/
 
+/* Phone element*/
 div.phone {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  transform: rotate(-0.05turn);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
   width: 300px;
   height: 550px;
   border: 1px black solid;
   outline: 5px rgb(188, 182, 182) solid;
   border-radius: 1.5rem;
-  margin-top: 5rem;
-  transform:  translate(260%) rotate(-0.05turn);
-  background-color: rgba(12, 13, 13, 0.991);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(92, 87, 87, 0.767)
+  );
+}
+
+/* form-card-container */
+div.form-card-container {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+div.form-card-container form {
+  display: flex;
+  min-width: 90%;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 /* logout button */
 button#logout {
-  position: absolute;
   z-index: 100;
   width: 3rem;
-  bottom: 5px;
-  right: 50%;
   height: 3rem;
-  margin-top: 1rem;
-  margin-right: 1rem;
+  margin-bottom: 0.5rem;
   background-color: rgb(230, 238, 238);
   border-radius: 100%;
   font-size: 10px;
-  transform: translate(75%);
 }
-
 
 /* adding class to hide login menu */
 div.hidden {
   display: none;
 }
 
-
-
+/* cards container */
+div.cards-list-container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
 
 /* start flip card */
 .card-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90%;
-  perspective: 200rem;
-  height: 60px;
+  height: 50px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+div.card-front {
+  display: flex;
+  flex-flow: row nowrap;
+  border-radius: 5px;
+}
+.card-back {
+  display: flex;
+  max-height: 50px;
+  transform: rotateX(180deg);
+  border-radius: 5px;
+}
+
+div.card-body{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
 }
 
 .card-container:hover .card-front {
@@ -206,29 +249,24 @@ div.hidden {
   transform: rotateX(0deg);
 }
 
-.card-back {
-  transform: rotateX(180deg);
-}
-
 .card {
   position: absolute;
   height: 100%;
   width: 100%;
   transition: all 0.9s;
   backface-visibility: hidden;
-}
-
-.card-back .card-body {
-  position: relative;
+  border-radius: 5px;
 }
 
 .card-body button {
   position: absolute;
-  top: 20%;
-  right: 2%;
+  display: flex;
+  align-items: center;
+  top: 15%;
+  right: 1%;
   border-radius: 100%;
   height: 70%;
+font-size: smaller;
   text-align: center;
-  /* margin: -15% 0 0 -23%; */
 }
 /* end flip card */
